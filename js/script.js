@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // let userInput = document.querySelector('.search-bar');
     let sectionResults = document.querySelector('.section-results');
     let sectionPagination = document.querySelector('.section-pagination');
 
@@ -12,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let getUsers = apiHandler(`https://reqres.in/api/users`);
 
     getUsers.then(users => {
-
-        console.log(users);
 
         let paginationText = document.createElement('p');
 
@@ -46,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pageNumber.innerText = i;
 
             pageNumberContainer.appendChild(pageNumber);
+
         }
 
 
@@ -69,9 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             userContainer.appendChild(userAvatar);
 
-            let userName = document.createElement('h5');
+            let userName = document.createElement('a');
 
             userName.innerText = `${user.first_name} ${user.last_name}`;
+            userName.href = './pages/user-profile.html';
 
             userContainer.appendChild(userName);
 
@@ -81,7 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             userContainer.appendChild(userEmail);
 
-        })
+            let buttonView = document.createElement('button');
+            buttonView.innerText = 'View';
+            buttonView.className = 'button-view';
+
+            userContainer.appendChild(buttonView);
+
+            buttonView.addEventListener('click', function () {
+                location.href = `${location.protocol}//${location.host}/pages/user-profile.html?id=${user.id}`;
+            });
+        });
     });
 
 });

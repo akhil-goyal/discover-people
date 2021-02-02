@@ -84,6 +84,19 @@ header a {
     font-size: 0.8em;
 }
 
+.button-view {
+    background-color:rgb(84, 138, 201);
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 /* PAGINATION */
 .section-pagination {
     margin-top: 2em;
@@ -125,6 +138,29 @@ header a {
 
 .section-info a {
     display: block;
+}
+
+/* USER DETAILS */
+.user-details div {
+    display: grid;
+    gap: 1em;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.user-details img{
+    height: 15em;
+    width: 15em;
+    border-radius: 7.5em;
+}
+
+.user-details h5{
+    font-size: 1em;
+}
+
+.user-details h6{
+    font-size: 0.8em;
 }
 
 /* FOOTER */
