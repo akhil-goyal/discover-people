@@ -1,18 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // let userInput = document.querySelector('.search-bar');
     let sectionResults = document.querySelector('.section-results');
     let sectionPagination = document.querySelector('.section-pagination');
 
     async function apiHandler(apiUrl) {
+
         let response = await fetch(apiUrl);
         let data = await response.json();
+
         return data;
     }
 
-    let getUsers = apiHandler(`https://reqres.in/api/users`);
+    let getUsers = apiHandler(`https://reqres.in/api/users?page=1`);
 
     getUsers.then(users => {
+
+        console.log(users);
+
+        let userArray = users.data;
 
         let paginationText = document.createElement('p');
 
@@ -24,38 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sectionPagination.appendChild(paginationText);
 
-        let paginationContainer = document.createElement('div');
-        paginationContainer.className = 'page-numbers';
+        loopData(userArray);
 
-        sectionPagination.appendChild(paginationContainer);
+    });
 
-        let buttonPrevious = document.createElement('p');
-        buttonPrevious.innerText = 'Previous';
+    function loopData(userArray) {
 
-        paginationContainer.appendChild(buttonPrevious);
+        sectionResults.innerHTML = '';
 
-
-
-        for (let i = 1; i <= users.total_pages; i++) {
-
-            let pageNumberContainer = document.createElement('div');
-            paginationContainer.appendChild(pageNumberContainer);
-
-            let pageNumber = document.createElement('p');
-            pageNumber.innerText = i;
-
-            pageNumberContainer.appendChild(pageNumber);
-
-        }
-
-
-
-        let buttonNext = document.createElement('p');
-        buttonNext.innerText = 'Next';
-
-        paginationContainer.appendChild(buttonNext);
-
-        users.data.map(user => {
+        userArray.map(user => {
 
             let userContainer = document.createElement('div');
             userContainer.className = 'user-avatar';
@@ -69,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             userContainer.appendChild(userAvatar);
 
-            let userName = document.createElement('a');
+            let userName = document.createElement('p');
 
             userName.innerText = `${user.first_name} ${user.last_name}`;
-            userName.href = './pages/user-profile.html';
+            // userName.href = './pages/user-profile.html';
 
             userContainer.appendChild(userName);
 
@@ -92,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 location.href = `${location.protocol}//${location.host}/pages/user-profile.html?id=${user.id}`;
             });
         });
-    });
+
+    }
 
 });

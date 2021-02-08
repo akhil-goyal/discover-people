@@ -34,7 +34,7 @@ header a {
 .section-people {
     margin-top: 2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
 }
 
@@ -176,4 +176,3 @@ footer {
 footer p {
     color: var(--color-light);
 }
-  
