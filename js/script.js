@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // });
 
             buttonView.addEventListener('click', function () {
-                location.href = `/pages/user-profile.html?id=${user.id}`;
+                location.href = `/discover-people/pages/user-profile.html?id=${user.id}`;
             });
         });
 
