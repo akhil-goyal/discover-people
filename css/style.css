@@ -1,5 +1,6 @@
+/* ----------------------------- HEADER --------------------------- */
 header {
-    background-color: rgb(84, 138, 201);
+    background-color: var(--color-primary);
     height: 4em;
     display: flex;
     align-items: center;
@@ -10,8 +11,11 @@ header a {
     color: var(--color-light);
     font-size: 1.5em;
 }
+/* ---------------------------------------------------------------- */
 
-/* HERO */
+
+
+/* ------------------------- SECTION - HERO ----------------------- */
 .section-hero {
     height: 35em;
     background: linear-gradient(
@@ -29,8 +33,11 @@ header a {
     color: var(--color-light);
     font-size: 3em;
 }
+/* ---------------------------------------------------------------- */
 
-/* DISCOVER */
+
+
+/* -------------------- SECTION - DISCOVER PEOPLE ----------------- */
 .section-people {
     margin-top: 2em;
     display: flex;
@@ -46,15 +53,11 @@ header a {
     font-size: 2em;
     text-align: center;
 }
+/* ---------------------------------------------------------------- */
 
-.search-bar {
-    border: 1px solid gray;
-    width: 12em;
-    padding-left: 1em;
-    border-radius: 1em;
-}
 
-/* RESULTS */
+
+/* ------------------------ SECTION - RESULTS --------------------- */
 .section-results {
     display: grid;
     margin-top: 2em;
@@ -85,7 +88,7 @@ header a {
 }
 
 .button-view {
-    background-color:rgb(84, 138, 201);
+    background-color:var(--color-primary);
     border: none;
     color: white;
     padding: 7px 10px;
@@ -96,33 +99,20 @@ header a {
     margin: 4px 2px;
     cursor: pointer;
 }
+/* ---------------------------------------------------------------- */
 
-/* PAGINATION */
+
+
+/* ----------------------- SECTION - PAGINATION ------------------- */
 .section-pagination {
     margin-top: 2em;
     text-align: center;
 }
+/* ---------------------------------------------------------------- */
 
-.page-numbers {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
-}
 
-.page-numbers div {
-    height: 2em;
-    width: 2em;
-    border-radius: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(84, 138, 201);
-    color: var(--color-light);
-    margin: 0 0.5em;
-}
 
-/* INFO */
+/* -------------------------- SECTION - INFO ---------------------- */
 .section-info {
     background-color: rgb(199, 199, 199);
     height: 13em;
@@ -139,8 +129,11 @@ header a {
 .section-info a {
     display: block;
 }
+/* ---------------------------------------------------------------- */
 
-/* USER DETAILS */
+
+
+/* ---------------------- SECTION - USER DETAILS ------------------ */
 .user-details div {
     display: grid;
     gap: 1em;
@@ -162,10 +155,14 @@ header a {
 .user-details h6{
     font-size: 0.8em;
 }
+/* ---------------------------------------------------------------- */
 
-/* FOOTER */
+
+
+/* ------------------------- SECTION - FOOTER --------------------- */
+
 footer {
-    background-color: rgb(84, 138, 201);
+    background-color: var(--color-primary);
     height: 4em;
     margin-top: 2em;
     display: flex;
@@ -176,3 +173,4 @@ footer {
 footer p {
     color: var(--color-light);
 }
+/* ---------------------------------------------------------------- */
